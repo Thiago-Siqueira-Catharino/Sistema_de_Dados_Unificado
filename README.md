@@ -5,8 +5,9 @@
 ---
 
 ## Sumário
-- [Sobre] (#-Sobre)
-- [Objetivos] (#-Objetivos)
+- [Sobre](#-Sobre)
+- [Objetivos](#-Objetivos)
+- [Tecnologias utilizadas](#-TechStack)
 
 ---
 
@@ -25,7 +26,7 @@ O SDU é uma solução que se propõe a **unificar os dados de saúde**, permiti
 
 ---
 
-# Tecnologias Utilizadas
+## Tecnologias utilizadas
 - **Linguagem:** Python
 - **Framework:** Django
 - **Banco de dados:** MongoDB
