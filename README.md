@@ -1,7 +1,32 @@
-# Sistema_de_Dados_Unificado
-Esse projeto tem como objetivo unificar  e facilitar o acesso de dados de saúde para agilizar o atendimento dos cidadãos e a perca do precioso tempo dos profissionais da saúde e dos cidadãos.
+# SDU - Sistema de Dados Unificado
 
-Nós usaremos um sistema de "Data lake", onde os arquivos (principalmente exames e laudos), serão armazenados na núvem e devidamente catalogados em um banco de dados. 
-Dessa forma, os profissionais de saúde conseguiram acessar essas informações mais facilmente, através de um interface WEB, para agilizar o seu trabalho.
-Com isso também será criado um histórico do paciente, onde o profissional conseguirá ter muito mais informações sobre as situações, causas e consequências do
-quadro de saúde do paciente sendo atendido.
+ O **SDU (Sistema de Dados Unificado)** é um projeto acadêmico desenvolvido com o objetivo de **integrar e centralizar informações da área da saúde**, facilitando o acesso, a análise e a tomada de decisões a partir de dados confiáveis.
+
+---
+
+## Sumário
+- [Sobre] (#-Sobre)
+- [Objetivos] (#-Objetivos)
+
+---
+
+## Sobre
+O SDU é uma solução que se propõe a **unificar os dados de saúde**, permitindo a integração de diversas fontes em um só sistema, os principais focos sendo:
+- Agilizar a acessibilidade dos dados para os profissionais
+- Apoiar a gestão e análise de indicadores de saúde
+- Servir como base de dados para pesquisas
+
+---
+
+## Objetivos
+- Centralizar dados dispersos em vários sistemas;
+- Oferecer acesso rápido e seguro para os profissionais de saúde;
+
+
+---
+
+# Tecnologias Utilizadas
+- **Linguagem:** Python
+- **Framework:** Django
+- **Banco de dados:** MongoDB
+- **Outros:** Git/Github
