@@ -71,20 +71,27 @@ def receive_data(request):
         link = salvar_arq(arquivo)
 
         return JsonResponse({'nome':nome, 'cpf':cpf, 'link':link})
-    
+
+@csrf_exempt    
 def login(request): 
-    if request.method == 'POST': 
+    if request.method == 'POST':
+        logged = False 
         nome_de_usuario = request.POST.get("usuario") 
-        senha = request.POST.get("senha") 
+        senha = str(request.POST.get("senha") )
         
         cursor = db["users"].find({"usuario":nome_de_usuario}, {"usuario":1, "senha":1}) 
         cursor.batch_size(100) 
         
         encontrado = None 
         for doc in cursor: 
-            if senha == doc.get("senha"): 
+            if senha == doc.get("senha"):
+                logged = True 
                 return JsonResponse({ 
                     "message":"ok", 
                     "usuario_id":str(doc.get("_id")), 
                     "usuario":doc.get("usuario") 
                     })
+            
+        if logged == False:
+            return JsonResponse({}, status = 401)
+            
