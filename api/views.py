@@ -10,10 +10,12 @@ import os, json, re
 from google.oauth2.service_account import Credentials
 from googleapiclient.http import MediaIoBaseUpload
 from googleapiclient.discovery import build
+import mimetypes
 import io
 
 def salvar_arq(arquivo):
-    service_account_file = 'client_secret_988952397907-5m0r2q39cncojrjd2tqcs17ome0hroh4.apps.googleusercontent.com.json'
+    service_account_file = 'gen-lang-client-0830734393-7597f1579bd8.json'
+    #service_account_file = 'client_secret_988952397907-5m0r2q39cncojrjd2tqcs17ome0hroh4.apps.googleusercontent.com.json'
     scopes = ['https://www.googleapis.com/auth/drive.file']
     creds = Credentials.from_service_account_file(service_account_file, scopes=scopes)
     
@@ -21,7 +23,12 @@ def salvar_arq(arquivo):
 
     file_metadata = {'name':arquivo.name}
     file_bytes = arquivo.read()
-    mime_type = arquivo.content_type
+    mime_type, _ = mimetypes.guess_type(arquivo.name)
+
+    if mime_type is None:
+        mime_type = 'application/octet-stream'
+
+    arquivo.seek(0)
     media = MediaIoBaseUpload(io.BytesIO(file_bytes), mimetype=mime_type)
 
     file = service.files().create(
