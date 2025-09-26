@@ -94,4 +94,12 @@ def login(request):
             
         if logged == False:
             return JsonResponse({}, status = 401)
-            
+        
+def cadastro(request):
+    if request.method == 'POST':
+        nome = request.POST.get('nome')
+        crm = request.POST.get('crm')
+        uf = request.POST.get('uf')
+
+    elif request.method == 'GET':
+        pass
